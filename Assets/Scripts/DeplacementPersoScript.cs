@@ -54,7 +54,7 @@ public class DeplacementPersoScript : MonoBehaviour
 
         /* ### rotation du personnage complexe, mais plus précise pour le tir. Activer cette fonction pour qu'elle s'exécute
          * et mettre en commentaire la rotation simple.*/
-        //TournePersonnage();
+        TournePersonnage();
 
         //----------------------------------------------------------------------------------------------
 
