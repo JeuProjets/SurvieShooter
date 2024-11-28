@@ -16,13 +16,18 @@ public class TirScript_CreationBalle : MonoBehaviour
     /*#################################################
    -- variables privées
    #################################################*/
+
     private bool peutTirer; // Est-ce que le personnage peut tirer
+    private AudioSource audioSource; // Source audio pour jouer le son
+
 
 
     //----------------------------------------------------------------------------------------------
     void Start()
     {
         peutTirer = true; // Au départ, on veut que le personnage puisse tirer
+        audioSource = GetComponent<AudioSource>();
+
     }
     //----------------------------------------------------------------------------------------------
 
@@ -37,7 +42,7 @@ public class TirScript_CreationBalle : MonoBehaviour
         {
             Tir();
         }
-        // --> partie à compléter ****
+     
 
     }
     //----------------------------------------------------------------------------------------------
@@ -51,7 +56,7 @@ public class TirScript_CreationBalle : MonoBehaviour
         /* On désactive la capacité de tirer et on appelle la fonction ActiveTir() après
          un délai de 0.1 seconde */
         peutTirer = false;
-        Invoke("ActiveTir", 0.1f);
+        
 
 
         /* --> partie à compléter...
@@ -73,7 +78,7 @@ public class TirScript_CreationBalle : MonoBehaviour
 
         balleCopie.GetComponent<Rigidbody>().velocity = transform.forward * vitesseBalle;
 
-
+        Invoke("ActiveTir", 0.1f);
 
     }
     //----------------------------------------------------------------------------------------------
